@@ -1,12 +1,9 @@
-import { Button } from './components/ui/button';
+import NavBar from './components/NavBar';
 
 const App = () => {
   return (
     <div>
-      <h1 className="  text-2xl text-blue-700">
-        Welcome! School Management System
-      </h1>
-      <Button>Test Button</Button>
+      <NavBar />
     </div>
   );
 };
