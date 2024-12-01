@@ -21,12 +21,12 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="max-w-lg">
+    <div className="">
       {/* Mobile Navigation */}
-      <nav className="md:hidden font-urbanist fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
+      <nav className="md:hidden font-urbanist bg-white border-b border-gray-200 z-50">
         <div className="container mx-auto flex justify-between items-center p-4">
           <div className="text-xl font-semibold tracking-wide text-gray-900">
-            Afatech
+            Afatech International School
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -41,11 +41,11 @@ const NavBar = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              className="absolute top-full left-0 right-0 bg-white shadow-lg"
+              className="bg-white shadow-lg"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
             >
               {navigation.map((item) => (
                 <a
@@ -66,7 +66,7 @@ const NavBar = () => {
       </nav>
 
       {/* Desktop Navigation */}
-      <nav className="hidden font-urbanist md:block fixed top-0 left-0 right-0 lg:px-8 bg-white border-b border-gray-200 shadow-md z-50">
+      <nav className="hidden font-urbanist md:block lg:px-8 bg-white border-b border-gray-200 shadow-md z-50">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="text-2xl font-semibold tracking-wide text-gray-900">
             Afatech International School
