@@ -47,7 +47,7 @@ const Admissions = () => {
             Application Process
           </h3>
 
-          <div className="md:flex space-y-6">
+          <div className="md:flex space-y-6 md:space-y-0">
             {applicationMethods.map((method, index) => (
               <div key={index} className="space-y-3 md:w-1/2">
                 <div className="flex items-center space-x-3">
