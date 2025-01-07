@@ -1,5 +1,4 @@
-import React from 'react';
-import { Phone, Mail, ChevronDown } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 const TopBar = () => {
   return (
