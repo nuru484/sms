@@ -26,12 +26,21 @@ api.interceptors.response.use(
     // Automatically parse JSON responses
     return response.data;
   },
-
   async (error) => {
     if (error.response) {
       // Server-side error
       const { data, status } = error.response;
-      const message = data.message || 'An error occurred';
+
+      // If errors are available in response, extract the messages
+      let message = 'An error occurred'; // Default message
+      if (data.errors && Array.isArray(data.errors)) {
+        // If there are multiple validation errors, we join them into a single message
+        message = data.errors.map((err) => err.msg).join(', ');
+      } else if (data.message) {
+        // Fallback if there's a top-level message
+        message = data.message;
+      }
+
       const type = data.type || 'UNKNOWN_ERROR';
       const details = data.errors || null;
 

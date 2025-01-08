@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -21,13 +22,15 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <h1>Something went wrong.</h1>
-          <p>{this.state.error?.toString()}</p>
-          {this.state.errorInfo && (
-            <details>{this.state.errorInfo.componentStack}</details>
-          )}
-        </div>
+        <Alert className="border-red-600 mt-4 fixed top-2">
+          <AlertTitle>Something went wrong.</AlertTitle>
+          <AlertDescription className="text-red-600">
+            <p> {this.state.error?.toString()}</p>
+            {this.state.errorInfo && (
+              <details>{this.state.errorInfo.componentStack}</details>
+            )}
+          </AlertDescription>
+        </Alert>
       );
     }
     return this.props.children;
