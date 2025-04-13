@@ -15,6 +15,8 @@ const LoginForm = ({ onSubmit, isLoading }) => {
     setShowPassword((prev) => !prev);
   };
 
+  // updated
+
   return (
     <div>
       <div className="bg-white p-8">
@@ -122,8 +124,6 @@ const LoginForm = ({ onSubmit, isLoading }) => {
     </div>
   );
 };
-
-
 
 LoginForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
