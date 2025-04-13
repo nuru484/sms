@@ -123,7 +123,7 @@ const LoginForm = ({ onSubmit, isLoading }) => {
   );
 };
 
-// updates
+
 
 LoginForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
